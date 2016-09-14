@@ -31,4 +31,14 @@ class FizzbuzzTest extends \PHPUnit_Framework_TestCase
     $expected = 'Buzz';
     $this->assertSame($expected, $fizzbuzz->calc(5));
   }
+
+  /**
+   * @test
+   */
+  public function ３と５両方の倍数の場合にはFizzBuzzを返すこと()
+  {
+    $fizzbuzz = new Fizzbuzz();
+    $expected = 'FizzBuzz';
+    $this->assertSame($expected, $fizzbuzz->calc(15));
+  }
 }
