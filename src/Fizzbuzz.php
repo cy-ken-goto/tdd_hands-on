@@ -5,6 +5,8 @@ class Fizzbuzz
   const FIZZ_BUZZ = 'FizzBuzz';
   const FIZZ = 'Fizz';
   const BUZZ = 'Buzz';
+  const FIZZ_NUMBER = 3;
+  const BUZZ_NUMBER = 5;
 
   public function calc($num){
     if ($this->isFizz($num) && $this->isBuzz($num)) {
@@ -21,11 +23,11 @@ class Fizzbuzz
 
   private function isFizz($num)
   {
-    return $num % 3 === 0;
+    return $num % self::FIZZ_NUMBER === 0;
   }
 
   private function isBuzz($num)
   {
-    return $num % 5 === 0;
+    return $num % self::BUZZ_NUMBER === 0;
   }
 }
