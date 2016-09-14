@@ -2,6 +2,7 @@
 namespace App;
 class FizzbuzzTest extends \PHPUnit_Framework_TestCase
 {
+
   /**
    * @test
    */
@@ -20,6 +21,7 @@ class FizzbuzzTest extends \PHPUnit_Framework_TestCase
     $fizzbuzz = new Fizzbuzz();
     $expected = 'Fizz';
     $this->assertSame($expected, $fizzbuzz->calc(3));
+    $this->assertSame($expected, $fizzbuzz->calc(6));
   }
 
   /**
@@ -30,6 +32,7 @@ class FizzbuzzTest extends \PHPUnit_Framework_TestCase
     $fizzbuzz = new Fizzbuzz();
     $expected = 'Buzz';
     $this->assertSame($expected, $fizzbuzz->calc(5));
+    $this->assertSame($expected, $fizzbuzz->calc(10));
   }
 
   /**
@@ -40,5 +43,8 @@ class FizzbuzzTest extends \PHPUnit_Framework_TestCase
     $fizzbuzz = new Fizzbuzz();
     $expected = 'FizzBuzz';
     $this->assertSame($expected, $fizzbuzz->calc(15));
+    $this->assertSame($expected, $fizzbuzz->calc(30));
   }
+
+
 }
