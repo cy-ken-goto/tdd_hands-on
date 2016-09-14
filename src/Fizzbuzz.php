@@ -2,15 +2,19 @@
 namespace App;
 class Fizzbuzz
 {
+  const FIZZ_BUZZ = 'FizzBuzz';
+  const FIZZ = 'Fizz';
+  const BUZZ = 'Buzz';
+
   public function calc($num){
     if ($this->isFizz($num) && $this->isBuzz($num)) {
-      return 'FizzBuzz';
+      return self::FIZZ_BUZZ;
     }
     if ($this->isFizz($num)) {
-      return 'Fizz';
+      return self::FIZZ;
     }
     if ($this->isBuzz($num)) {
-      return 'Buzz';
+      return self::BUZZ;
     }
     return $num;
   }
