@@ -3,15 +3,25 @@ namespace App;
 class Fizzbuzz
 {
   public function calc($num){
-    if ($num % 3 === 0 && $num % 5 === 0) {
+    if ($this->isFizz($num) && $this->isBuzz($num)) {
       return 'FizzBuzz';
     }
-    if ($num % 3 === 0) {
+    if ($this->isFizz($num)) {
       return 'Fizz';
     }
-    if ($num % 5 === 0) {
+    if ($this->isBuzz($num)) {
       return 'Buzz';
     }
     return $num;
+  }
+
+  private function isFizz($num)
+  {
+    return $num % 3 === 0;
+  }
+
+  private function isBuzz($num)
+  {
+    return $num % 5 === 0;
   }
 }
