@@ -9,6 +9,9 @@ class Fizzbuzz
   const BUZZ_NUMBER = 5;
 
   public function calc($num){
+    if (!is_int($num) || $num < 1 || $num > 100) {
+      throw new \Exception('1~100までの数値を入力してください');
+    }
     if ($this->isFizzBuzz($num)) {
       return self::FIZZ_BUZZ;
     }
@@ -31,7 +34,7 @@ class Fizzbuzz
     return $num % self::BUZZ_NUMBER === 0;
   }
 
-    private function isFizzBuzz($num)
+  private function isFizzBuzz($num)
   {
     return $num % self::FIZZ_NUMBER === 0 && $num % self::BUZZ_NUMBER === 0;
   }

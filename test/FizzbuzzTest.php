@@ -34,4 +34,24 @@ class FizzbuzzTest extends \PHPUnit_Framework_TestCase
     $fizzbuzz = new Fizzbuzz();
     $this->assertSame($expected, $fizzbuzz->calc($num));
   }
+
+  public function dp_１から１００までの整数ではない場合、例外を返す()
+  {
+    return [
+      ['abc'],
+      [0],
+      [101]
+    ];
+  }
+
+  /**
+   * @test
+   * @dataProvider dp_１から１００までの整数ではない場合、例外を返す
+   * @expectedException Exception
+   */
+  public function １から１００までの整数ではない場合、例外を返す($num)
+  {
+    $fizzbuzz = new Fizzbuzz();
+    $fizzbuzz->calc($num);
+  }
 }
