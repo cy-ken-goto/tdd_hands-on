@@ -13,37 +13,25 @@ class FizzbuzzTest extends \PHPUnit_Framework_TestCase
     $this->assertSame($expected, $fizzbuzz->calc(1));
   }
 
-  public function dp_３の倍数のときは数の代わりにFizz、５の倍数のときは数の代わりにBuzzを返すこと()
+  public function dp_３の倍数はFizz、５の倍数はBuzz、３と５の倍数はFizzBuzzを返すこと()
   {
     return [
       [3,  'Fizz'],
       [6,  'Fizz'],
       [5,  'Buzz'],
-      [10, 'Buzz']
+      [10, 'Buzz'],
+      [15, 'FizzBuzz'],
+      [30, 'FizzBuzz']
     ];
   }
 
   /**
    * @test
-   * @dataProvider dp_３の倍数のときは数の代わりにFizz、５の倍数のときは数の代わりにBuzzを返すこと
+   * @dataProvider dp_３の倍数はFizz、５の倍数はBuzz、３と５の倍数はFizzBuzzを返すこと
    */
-  public function ３の倍数のときは数の代わりにFizz、５の倍数のときは数の代わりにBuzzを返すこと($num, $expected)
+  public function ３の倍数はFizz、５の倍数はBuzz、３と５の倍数はFizzBuzzを返すこと($num, $expected)
   {
     $fizzbuzz = new Fizzbuzz();
     $this->assertSame($expected, $fizzbuzz->calc($num));
   }
-
-
-  /**
-   * @test
-   */
-  public function ３と５両方の倍数の場合にはFizzBuzzを返すこと()
-  {
-    $fizzbuzz = new Fizzbuzz();
-    $expected = 'FizzBuzz';
-    $this->assertSame($expected, $fizzbuzz->calc(15));
-    $this->assertSame($expected, $fizzbuzz->calc(30));
-  }
-
-
 }
